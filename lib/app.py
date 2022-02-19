@@ -9,7 +9,7 @@ class Member:
         print(f"Fancy meeting you, my name is {self.name}!")
 
 skip = Member("Caniggia Thompson")
-# print(skip.name)
+print(skip.name)
 
 skip.introduce()
 
@@ -20,7 +20,7 @@ class Student(Member):
         self.reason = reason
 
 derek = Student("Derek", "I've always wanted to make websites!")
-# print(derek.reason)
+print(derek.reason)
 
 
 class Instructor(Member):
@@ -36,7 +36,7 @@ henry = Instructor("Henry Hong", "I've been coding in Python for 5 years and wan
 josh = Instructor("Joshua Smith", "I've been coding in Python for 5 years and want to share the love!", ["Python", "Javascript", "C++"])
 
 henry.add_skill("Ruby")
-# print(henry.skills)
+print(henry.skills)
 
 
 class Workshop:
@@ -47,6 +47,7 @@ class Workshop:
         self.students = students
 
     def add_participant(self, member):
+        print(member.__class__.__name__)
         if member.__class__.__name__ == "Instructor":
             self.instructors.append(member.name)
         elif member.__class__.__name__ == "Student":
@@ -64,8 +65,9 @@ vicky.add_skill("HTML")
 vicky.add_skill("JavaScript")
 nicole = Instructor("Nicole McMillan", "I have been programming for 5 years in Python and want to spread the love")
 nicole.add_skill("Python")
-
 print(vicky.skills)
+print(vicky.bio)
+print(nicole.bio)
 print(nicole.skills)
 
 workshop.add_participant(jane)
